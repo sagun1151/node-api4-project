@@ -32,8 +32,12 @@ server.post('./api/register', async (req, res) => {
 server.post('./api/login', async (req, res) => {
     try{
         const user = await Users.findByName()
-        res.json(user.name)
+        res.json()
     }catch(err){
         res.status(500).json({message:err})
     }
+})
+
+server.use('*', (req, res)=> {
+    res.send('<h1>Home Page<h1>')
 })
