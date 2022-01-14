@@ -4,6 +4,7 @@ const Users = require('./api/model')
 const server = express();
 
 server.use(express.json())
+server.use(cors())
 
 const PORT = process.env.PORT || 8080
 
@@ -32,7 +33,7 @@ server.post('./api/register', async (req, res) => {
 server.post('./api/login', async (req, res) => {
     try{
         const user = await Users.findByName()
-        res.json()
+        res.json({message:"Hellooo!!"})
     }catch(err){
         res.status(500).json({message:err})
     }
