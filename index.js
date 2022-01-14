@@ -4,7 +4,6 @@ const Users = require('./api/model')
 const server = express();
 
 server.use(express.json())
-server.use(cors())
 
 const PORT = process.env.PORT || 8080
 
